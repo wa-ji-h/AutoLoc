@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+
 @Entity
 @Table(name = "employe")
 @Getter
@@ -27,4 +28,8 @@ public class Employe {
     @Enumerated(EnumType.STRING)
     @Column(nullable = false, length = 20)
     private RoleEmploye role;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_agence", nullable = false)
+    private Agence agence;
 }
