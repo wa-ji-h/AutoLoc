@@ -14,7 +14,7 @@ import java.time.LocalDate;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Maintenance {
+public class  Maintenance {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,13 +23,13 @@ public class Maintenance {
     @Column(nullable = false)
     private LocalDate dateDebut;
 
-    @Column(nullable = false)
+    // Nullable : une maintenance en cours n'a pas encore de date de fin
     private LocalDate dateFin;
 
-    @Column(nullable = false, length = 255)
+    @Column(nullable = false, length = 500)
     private String description;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne()
     @JoinColumn(name = "id_vehicule", nullable = false)
     private Vehicule vehicule;
 }
