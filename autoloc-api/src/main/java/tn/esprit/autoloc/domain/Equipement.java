@@ -21,7 +21,7 @@ public class Equipement {
     @Column(nullable = false, length = 100)
     private String libelle;
     
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToMany()
     @JoinColumn(name = "id_vehicule", nullable = false)
     private Vehicule vehicule;
 }

@@ -42,16 +42,13 @@ public class Vehicule {
     @Column(nullable = false, length = 20)
     private StatutVehicule statut;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne()
     @JoinColumn(name = "id_agence", nullable = false)
     private Agence agence;
 
-    @OneToMany(mappedBy = "vehicule", fetch = FetchType.LAZY)
-    private List<Maintenance> maintenances = new ArrayList<>();
-
-    @OneToMany(mappedBy = "vehicule", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "vehicule")
     private List<Reservation> reservations = new ArrayList<>();
 
-    @OneToMany(mappedBy = "vehicule", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "vehicule")
     private List<Equipement> equipements = new ArrayList<>();
 }

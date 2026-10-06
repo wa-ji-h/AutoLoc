@@ -36,6 +36,6 @@ public class Contrat {
     @JoinColumn(name = "id_reservation", nullable = false, unique = true)
     private Reservation reservation;
 
-    @OneToMany(mappedBy = "contrat", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "contrat")
     private List<Paiement> paiements = new ArrayList<>();
 }
