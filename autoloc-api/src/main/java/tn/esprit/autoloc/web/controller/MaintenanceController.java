@@ -7,7 +7,7 @@ import tn.esprit.autoloc.domain.Maintenance;
 import tn.esprit.autoloc.service.IMaintenanceService;
 
 @RestController
-@RequestMapping("/api/maintenances")
+@RequestMapping("/maintenances")
 @RequiredArgsConstructor
 public class MaintenanceController {
 

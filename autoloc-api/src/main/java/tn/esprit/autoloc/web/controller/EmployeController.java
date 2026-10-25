@@ -7,7 +7,7 @@ import tn.esprit.autoloc.domain.Employe;
 import tn.esprit.autoloc.service.IEmployeService;
 
 @RestController
-@RequestMapping("/api/employes")
+@RequestMapping("/employes")
 @RequiredArgsConstructor
 public class EmployeController {
 
